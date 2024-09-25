@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.producer.name }}
+spec:
+  type: NodePort
+  ports:
+    - port: {{ .Values.producer.service.port }}
+      targetPort: {{ .Values.producer.service.port }}
+      nodePort: {{ .Values.producer.service.nodePort }}
+  selector:
+    app: {{ .Values.producer.name }}

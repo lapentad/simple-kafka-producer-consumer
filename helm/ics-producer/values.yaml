@@ -1,0 +1,13 @@
+producer:
+  name: kafka-producer
+  replicaCount: 1
+  image:
+    repository: simple-producer
+    tag: latest
+  service:
+    port: 8080
+    nodePort: 30080
+
+kafka:
+  host: kafka-1-kafka-bootstrap
+  port: 9092

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.consumer.name }}
+spec:
+  replicas: {{ .Values.consumer.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.consumer.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.consumer.name }}
+    spec:
+      containers:
+      - name: {{ .Values.consumer.name }}
+        image: "{{ .Values.consumer.image.repository }}:{{ .Values.consumer.image.tag }}"
+        ports:
+        - containerPort: {{ .Values.consumer.service.port }}
+        env:
+        - name: SPRING_KAFKA_SERVER
+          value: "{{ .Values.kafka.host }}:{{ .Values.kafka.port }}"

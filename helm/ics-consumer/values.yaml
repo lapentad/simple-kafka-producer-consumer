@@ -1,0 +1,13 @@
+consumer:
+  name: kafka-consumer
+  replicaCount: 1
+  image:
+    repository: simple-consumer
+    tag: latest
+  service:
+    port: 9090
+    nodePort: 30081
+
+kafka:
+  host: kafka-1-kafka-bootstrap
+  port: 9092
