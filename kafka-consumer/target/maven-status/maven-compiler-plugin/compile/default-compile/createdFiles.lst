@@ -1,5 +1,0 @@
-com\demo\kafkaconsumer\controllers\KafkaListenerController.class
-com\demo\kafkaconsumer\configuration\KafkaConfiguration.class
-com\demo\kafkaconsumer\KafkaConsumerApplication.class
-com\demo\kafkaconsumer\model\Job.class
-com\demo\kafkaconsumer\service\KafkaConsumer.class
